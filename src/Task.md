@@ -63,3 +63,13 @@ Penalties are easy:
 also -3 for each task if mentee ignores Java Code Conventions
 -4 for each missed first-level feature
 -2 for each missed second-level feature
+
+
+//        Book[] books = new Book[]{new Book("1984", List.of(authors[0]), 555),
+//                new Book("Одноэтажная Америка", List.of(authors[1], authors[2]), 456),
+//                new Book("Записные книжки", List.of(authors[1]), 99),
+//                new Book("Путешествие на Дальний Восток", List.of(authors[2]), 99),
+//                new Book("Harry Potter and the philosopher's stone", List.of(authors[3]), 555),
+//                new Book("Harry Potter and the chamber of secrets", List.of(authors[3]), 654),
+//                new Book("Harry Potter and azkaban prisoner", List.of(authors[3]), 700),
+//                new Book("Руслан и людмила", List.of(authors[3]), 700)};

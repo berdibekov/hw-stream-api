@@ -1,11 +1,13 @@
-package task1;
+package task5;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Person {
+public class Soldier {
     private String name;
     private int age;
+    private int weight;
+
 }
