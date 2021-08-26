@@ -20,8 +20,6 @@ class CustomCollectorTest {
         Set<Soldier> soldiers = generateSoldiers();
         soldiers.add(youngestSoldier);
         soldiers.add(oldestSoldier);
-
-
         Stat stat = soldiers.stream().collect(customCollector);
 
         assertEquals(youngestSoldier, stat.getYoungest());
@@ -41,8 +39,6 @@ class CustomCollectorTest {
         Set<Soldier> soldiers = generateSoldiers();
         soldiers.add(new Soldier("youngest", 1));
         soldiers.add(new Soldier("oldest", 100));
-
-
         Stat stat = soldiers.stream().collect(customCollector);
         Stat parallelStat = soldiers.parallelStream().collect(customCollector);
 
@@ -67,5 +63,4 @@ class CustomCollectorTest {
     private static int generateNumber() {
         return new Random().nextInt(80) + 20;
     }
-
 }
