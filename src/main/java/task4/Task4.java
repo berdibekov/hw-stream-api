@@ -5,11 +5,9 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.maxBy;
 
-public class Main {
+public class Task4 {
     public static void main(String[] args) {
-
 //        2.	Create two arrays: Author[] authors and Book[] books. Their elements must use elements from the neighboring array.
 
         Author[] authors = generateAuthors();
@@ -114,7 +112,7 @@ public class Main {
         Arrays.stream(books).
                 filter(joanRollingAuthorChecker).
                 max(comparing(Book::getNumberOfPages)).
-                ifPresentOrElse(Main::printMaxBook, () -> System.out.println("Can`t find max book title"));
+                ifPresentOrElse(Task4::printMaxBook, () -> System.out.println("Can`t find max book title"));
     }
 
     private static void printMaxBook(Book max) {

@@ -3,8 +3,13 @@ package task1;
 import java.util.Comparator;
 import java.util.List;
 
-public class Main {
+public class Task1 {
     public static void main(String[] args) {
+//        Create:
+//        Person class with name and age fields
+//                A collection of Persons;
+//        Two instances of Comparator<Person> interface using lambda expressions: first one for comparing by name, second one – by age
+
         List<Person> persons = List.of(new Person("Ilyas",30),
                 new Person("Ivan",18),
                 new Person("Andrey",40),
@@ -23,7 +28,4 @@ public class Main {
                 sorted(ageComparator).
                 forEach(System.out::println);
     }
-
-
-
 }

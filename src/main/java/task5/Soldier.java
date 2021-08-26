@@ -8,6 +8,4 @@ import lombok.Data;
 public class Soldier {
     private String name;
     private int age;
-    private int weight;
-
 }

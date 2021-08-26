@@ -3,15 +3,17 @@ package task3;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-public class Main {
+public class Task3 {
+    @Data
+    @AllArgsConstructor
+    static
+    class Point {
+        private int x;
+        private int y;
+        private int z;
+    }
+
     public static void main(String[] args) {
-        @Data
-        @AllArgsConstructor
-        class Point {
-            private int x;
-            private int y;
-            private int z;
-        }
         System.out.println("First lambda result:");
         ThreeFunction<Integer, Integer, Integer, String> threeFunction =
                 (a, b, c) -> String.format("%d + %d + %d", a, b, c);

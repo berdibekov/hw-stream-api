@@ -1,40 +1,44 @@
 package task5;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter(value = AccessLevel.PRIVATE)
 public class Stat {
     private Soldier oldest;
     private Soldier youngest;
     private double averageAge;
+    private int allSoldiersNumber;
+    @Getter(value = AccessLevel.PRIVATE)
+    private long sumOfAges;
 
     public Stat mergeStat(Stat stat) {
         if (stat.getOldest().getAge() > oldest.getAge()) {
             this.oldest = stat.oldest;
         }
-        if (stat.getYoungest().getAge() > youngest.getAge()) {
+        if (stat.getYoungest().getAge() < youngest.getAge()) {
             this.youngest = stat.getYoungest();
         }
-        averageAge = (averageAge + stat.averageAge) / 2;
+        sumOfAges += stat.sumOfAges;
+        allSoldiersNumber += stat.allSoldiersNumber;
+        averageAge = sumOfAges / (double) allSoldiersNumber;
         return this;
     }
 
     public void updateStat(Soldier soldier) {
         int currentMaxAge = oldest == null ? 0 : oldest.getAge();
+        int currentMinAge = youngest == null ? 0 : youngest.getAge();
+
         if (soldier.getAge() > currentMaxAge) {
             oldest = soldier;
         }
-        if (soldier.getAge() < currentMaxAge || youngest == null) {
+        if (soldier.getAge() < currentMinAge || youngest == null) {
             youngest = soldier;
         }
-        if (averageAge > 0) {
-            averageAge = (averageAge + soldier.getAge()) / 2;
-        } else {
-            averageAge = soldier.getAge();
-        }
+        sumOfAges += soldier.getAge();
+        allSoldiersNumber += 1;
+        averageAge = sumOfAges / (double) allSoldiersNumber;
     }
 }
